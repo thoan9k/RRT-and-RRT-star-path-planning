@@ -226,6 +226,12 @@ class RRTgraph:
             pathcoords.append((x, y))
         return pathcoords
 
+    def getfinalcost(self):
+        final_cost = 0.0
+        for i in range(0, len(self.path) - 1):
+            final_cost += self.distance(self.path[i], self.path[i + 1])
+        return final_cost
+
     def bias(self, ngoal):
         n = self.number_of_nodes()
         self.add_node(n, ngoal[0], ngoal[1])
@@ -278,13 +284,13 @@ class RRTgraph:
         if best_neighbor is not None:
             # xoá đường line cũ tới nốt mới
             pygame.draw.line(map_, (255, 255, 255), (self.x[-1], self.y[-1]),
-                             (self.x[self.parent[-1]], self.y[self.parent[-1]]), 3)
+                             (self.x[self.parent[-1]], self.y[self.parent[-1]]), 1)
             time.sleep(self.speed)
             # Cập nhật parent của new_node
             self.parent[new_node] = best_neighbor
             self.cost[new_node] = cost_min
             # Vẽ đường nối từ best_neighbor đến new_node
-            pygame.draw.line(map_, (0, 0, 255), (self.x[best_neighbor], self.y[best_neighbor]), (x_new, y_new), 3)
+            pygame.draw.line(map_, (0, 0, 255), (self.x[best_neighbor], self.y[best_neighbor]), (x_new, y_new), 1)
             time.sleep(self.speed)
             pygame.display.update()
         # STEP 2: Tái cấu trúc cây
@@ -299,13 +305,13 @@ class RRTgraph:
                 if new_cost < self.cost[i]:
                     # xoá đường kết nối neighbor cũ
                     pygame.draw.line(map_, (255, 255, 255), (x_neighbor, y_neighbor),
-                                     (self.x[self.parent[i]], self.y[self.parent[i]]), 3)
+                                     (self.x[self.parent[i]], self.y[self.parent[i]]), 1)
                     time.sleep(self.speed)
                     # kết nối neighbor đó với new_node
                     self.parent[i] = new_node
                     self.cost[i] = new_cost
                     # Vẽ đường nối từ new_node đến neighbor i
-                    pygame.draw.line(map_, (0, 0, 255), (x_new, y_new), (x_neighbor, y_neighbor), 3)
+                    pygame.draw.line(map_, (0, 0, 255), (x_new, y_new), (x_neighbor, y_neighbor), 1)
                     time.sleep(self.speed)
                     pygame.display.update()
 

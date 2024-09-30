@@ -1,5 +1,5 @@
 import pygame
-import RRTbasepy
+import base
 import time
 
 
@@ -11,8 +11,8 @@ def main():
     obsnum = 50
 
     pygame.init()
-    map_ = RRTbasepy.RRTmap(start, goal, dimensions, obsdim, obsnum)
-    graph = RRTbasepy.RRTgraph(start, goal, dimensions, obsdim, obsnum)
+    map_ = base.RRTmap(start, goal, dimensions, obsdim, obsnum)
+    graph = base.RRTgraph(start, goal, dimensions, obsdim, obsnum)
     # tạo vật cản
     obstacles = graph.makeObs()
     # vẽ vật cản
