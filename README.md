@@ -7,3 +7,9 @@
 <p align="center">
   <img src="images/result.gif" alt="Result of 1000 iterations for making optimized path to goal" />
 </p>
+<p align="center">
+  <img src="images/result1.gif" alt="Other results" />
+</p>
+<p align="center">
+  <img src="images/result2.gif" alt="Other results" />
+</p>
