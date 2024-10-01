@@ -3,4 +3,7 @@
 ## Development
 - In addition to the RRT algorithm I learned from the above link, i also wrote and developed more about RRT* algorithm to get the minimal cost of path
 ## Result
-![Result of 1000 iterations for making optimized path to goal](images/result.gif)
+
+<p align="center">
+  <img src="images/result.gif" alt="Result of 1000 iterations for making optimized path to goal" />
+</p>
