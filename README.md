@@ -5,6 +5,9 @@
 ## Result Of RRT* Algorithm
 <p align="center"><strong><em>Result of 1000 iterations for making optimized path to goal<p>
 <p align="center">
+  <img src="images/result0.gif" alt="Result of 1000 iterations for making optimized path to goal" />
+</p>
+<p align="center">
   <img src="images/result.gif" alt="Result of 1000 iterations for making optimized path to goal" />
 </p>
 <p align="center">
